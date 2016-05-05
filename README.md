@@ -1,6 +1,6 @@
 ## Deploy Jekyll pages using Git and Travis CI
 
-I just cloned from [Felix Rieseberg's](https://github.com/felixrieseberg/travis-jekyll-git) repo and did some modification based on my situation, you may check out my branch `myVersion` here for the deployment. Thanks for Felix's sharing!
+I just cloned this from [Felix Rieseberg's repo](https://github.com/felixrieseberg/travis-jekyll-git) and did some modification based on my situation, you may check out my branch `myVersion` here for the deployment. Thanks for Felix's sharing!
 
 ---
 
@@ -15,6 +15,10 @@ GitHub Pages are an amazing way to host Jekyll pages, but in some cases, you mig
  * Force-push the result to a desired remote Git repo, suppressing any potentially compromising log messages
 
 The files of interest here are `.travis.yml`, <strike>`_config_ci.yml`</strike>(I didn't use this `_config_ci.yml` in my project, as I just need to add `exclude: [vendor]` in my Jekyll `_config.yml`, which is easier for me.<sup>[[reference](https://jekyllrb.com/docs/continuous-integration/)]</sup>), `scripts/build.sh` and `scripts/deploy.sh`. The Travis configuration file instructs Travis, to build, test, and deploy using <strike>`_config_ci.yml` as Jekyll configuration and</strike> `scripts/deploy.sh` as the custom deployment provider.
+
+You may just execute this command to exclude `vendor` in your `_config.yml`:
+
+`echo -e "\nexclude: [vendor]" >> _config.yml`
 
 <strike>To use this for your own project, update `.travis.yml` with your own white and blacklisted branches. Then, check `build.sh` and ensure that the settings for `jekyll build` and HTMLProofer are fit for your site (in most cases, they should be).</strike>
 
