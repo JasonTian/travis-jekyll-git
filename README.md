@@ -14,7 +14,7 @@ GitHub Pages are an amazing way to host Jekyll pages, but in some cases, you mig
  * Add and commit all static files
  * Force-push the result to a desired remote Git repo, suppressing any potentially compromising log messages
 
-The files of interest here are `.travis.yml`, <strike>`_config_ci.yml`</strike>(I didn't use this `_config_ci.yml` in my project, as I just need to add `exclude: [vendor]` in my Jekyll `_config.yml`, which is easier for me.<sup>[[reference](https://jekyllrb.com/docs/continuous-integration/)]</sup>), `scripts/build.sh` and `scripts/deploy.sh`. The Travis configuration file instructs Travis, to build, test, and deploy using <strike>`_config_ci.yml` as Jekyll configuration and</strike> `scripts/deploy.sh` as the custom deployment provider.
+The files of interest here are `.travis.yml`, <strike>`_config_ci.yml`</strike>(I didn't use this `_config_ci.yml` in my project, as I just need to add `exclude: [vendor]` in my Jekyll `_config.yml`, which is easier for me.<sup>[[reference](https://jekyllrb.com/docs/continuous-integration/)]</sup>), `_scripts/build.sh` and `_scripts/deploy.sh`. The Travis configuration file instructs Travis, to build, test, and deploy using <strike>`_config_ci.yml` as Jekyll configuration and</strike> `scripts/deploy.sh` as the custom deployment provider.
 
 You may just execute this command to exclude `vendor` in your `_config.yml`:
 
@@ -38,7 +38,16 @@ I used six environment variables in my Travis CI Settings, and keep the `Display
 
 Note: `repo_url` is the url address of your repo like `github.com/JasonTian/travis-jekyll-git.git`, make sure don't include `https://`, `working_branch` means the branch that your Travis CI is working on.
 
-Include the related files here and put them in your source repo - and you're good to go!
+Include the related files here and put them in your source repo. overall,
+
+* `General Settings` in Travis CI
+* `Environment Variables` in Travis CI
+* `Gemfile`
+* `echo -e "\nexclude: [vendor]" >> _config.yml`
+* `.travis.yml`
+* `_scripts` folder
+
+And you're good to go!
 
 ## License
 MIT, please see LICENSE for details. 
