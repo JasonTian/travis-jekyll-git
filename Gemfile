@@ -1,5 +1,12 @@
 source "https://rubygems.org"
 
-gem "jekyll"
+gem "jekyll", "3.2.1"
+gem "activesupport", "4.2.7"
+gem "kramdown", "1.11.1"
+gem "liquid", "3.0.6"
+gem "listen", "3.0.6"
+gem "rouge", "1.11.1"
+gem "safe_yaml", "1.0.4"
+gem "sass", "3.4.22"
 gem "pygments.rb"
 gem "html-proofer"

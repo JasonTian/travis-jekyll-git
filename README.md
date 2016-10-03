@@ -42,7 +42,7 @@ Include the related files here and put them in your source repo. overall,
 
 * `General Settings` in Travis CI
 * `Environment Variables` in Travis CI
-* `Gemfile`
+* `Gemfile`(Version information can be specified here according to [Github Pages Dependency versions](https://pages.github.com/versions/) for better compatibility, check this Gemfile file for example.)
 * `echo -e "\nexclude: [vendor]" >> _config.yml`
 * `.travis.yml`
 * `_scripts` folder
